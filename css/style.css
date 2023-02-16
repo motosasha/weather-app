@@ -1,0 +1,376 @@
+/*:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #f7df1eaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}*/
+
+
+:root {
+	--gradient: linear-gradient(135deg, #72EDF2 10%, #5151E5 100%);
+}
+
+* {
+	box-sizing: border-box;
+	line-height: 1.25em;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 100vh;
+	font-family: 'Montserrat', sans-serif;
+	background-color: #343d4b;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	position: relative;
+}
+
+.inner {
+	border-radius: 25px;
+	box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+	background-color: #222831;
+	color: #ffffff;
+	height: 400px;
+	display: flex;
+	align-items: center;
+	z-index: 2;
+	position: relative;
+}
+
+.weather-side {
+	position: relative;
+	height: 100%;
+	border-radius: 25px;
+	background-size: cover;
+	width: 300px;
+	box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+	transition: -webkit-transform 300ms ease;
+	transition: transform 300ms ease, -webkit-transform 300ms ease;
+	transform: translateZ(0) scale(1.02) perspective(1000px);
+	padding: 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.weather-side:hover {
+	transform: scale(1.1) perspective(1500px) rotateY(10deg);
+}
+
+.weather-gradient {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: var(--gradient);
+	border-radius: 25px;
+	opacity: 0.8;
+}
+
+.date-container {
+	display: grid;
+	gap: 5px;
+	position: relative;
+}
+
+.date-day-name {
+	margin: 0;
+}
+
+.date-day-name::first-letter {
+	text-transform: uppercase;
+}
+
+.date-day {
+	display: block;
+}
+
+.location-icon {
+	display: inline-block;
+	height: 0.8em;
+	width: auto;
+}
+
+.weather-container {
+	position: relative;
+}
+
+.weather-icon {
+	background: rgb(255 255 255 / 25%);
+	display: block;
+	height: 72px;
+	width: 72px;
+	border-radius: 15px;
+	padding: 8px;
+}
+
+.weather-icon img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	transform: scale(1.5);
+}
+
+.weather-temp {
+	margin: 0;
+	font-weight: 700;
+	font-size: 4em;
+}
+
+.weather-desc {
+	margin: 0;
+}
+
+.info-side {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	position: relative;
+	height: 100%;
+	padding: 25px;
+}
+
+.today-info {
+	display: grid;
+	gap: 10px;
+	padding: 15px;
+	/*box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);*/
+	border-radius: 10px;
+}
+
+.today-info-row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.today-info > div .title {
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.week-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	display: flex;
+	width: 400px;
+}
+
+.week-list > li {
+	padding: 15px;
+	cursor: pointer;
+	transition: 200ms ease;
+	border-radius: 10px;
+}
+
+.week-list > li:hover {
+	transform: scale(1.1);
+	background: #fff;
+	color: #222831;
+	box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2)
+}
+
+.week-list > li.active {
+	background: #fff;
+	color: #222831;
+	border-radius: 10px;
+	pointer-events: none;
+}
+
+.week-list > li .day-name {
+	display: block;
+	margin: 10px 0 0 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.week-list > li .day-icon {
+	display: block;
+	height: 48px;
+	width: 48px;
+	margin: 0 auto;
+	padding: 8px;
+	background: #161a21;
+	border-radius: 10px;
+}
+
+.week-list > li.active .day-icon {
+	background: #ddd;
+}
+
+.week-list > li .day-icon img {
+	display: block;
+	height: 100%;
+	width: auto;
+	margin: 0 auto;
+	transform: scale(1.5);
+}
+
+.week-list > li .day-temp {
+	display: block;
+	text-align: center;
+	margin: 10px 0 0 0;
+	font-weight: 700;
+}
+
+.location-button {
+	outline: none;
+	width: 100%;
+	box-sizing: border-box;
+	border: none;
+	border-radius: 25px;
+	padding: 10px;
+	font-family: 'Montserrat', sans-serif;
+	background-image: var(--gradient);
+	color: #ffffff;
+	font-weight: 700;
+	box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+	transition: -webkit-transform 200ms ease;
+	transition: transform 200ms ease, -webkit-transform 200ms ease;
+	margin-top: auto;
+}
+
+.location-button:hover {
+	transform: scale(0.95);
+}
+
+.location-button .feather {
+	height: 1em;
+	width: auto;
+	margin-right: 5px;
+}
+
+.cities {
+	background: #222831;
+	color: #fff;
+	display: grid;
+	padding: 80px 15px 15px;
+	border-radius: 25px;
+	width: 320px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	transform: translate(-75px, 0);
+	box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+	transition: transform 0.25s ease-in-out;
+}
+
+.cities.active {
+	transform: translate(-75px, 120px);
+}
+
+.cities div {
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 10px;
+	padding: 5px;
+}
+.cities div:hover {
+	background-color: rgb(255 255 255 / 10%);
+}
+.cities div.active {
+	background-color: rgb(255 255 255 / 5%);
+	pointer-events: none;
+	font-weight: 700;
+}

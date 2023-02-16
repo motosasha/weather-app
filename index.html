@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/img/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="inner">
+        <div class="weather-side" data-elem="card">
+          <div class="weather-gradient"></div>
+          <div class="date-container">
+            <h2 class="date-day-name" data-elem="day"></h2>
+            <span class="date-day" data-elem="date"></span>
+            <span class="location">
+              <i class="location-icon" data-feather="map-pin"></i>
+              <span data-elem="city"></span>,
+              <span data-elem="country"></span>
+            </span>
+          </div>
+          <div class="weather-container">
+            <!-- <i class="weather-icon" data-elem="icon" data-feather="sun"></i> -->
+            <span class="weather-icon">
+              <img alt="Current weather" data-elem="icon">
+            </span>
+            <h1 class="weather-temp">
+              <span data-elem="temp"></span>°C
+            </h1>
+            <h3 class="weather-desc" data-elem="desc"></h3>
+          </div>
+        </div>
+
+        <div class="info-side">
+          <div class="today-info">
+            <div class="today-info-row">
+              <span class="title">Осадки</span>
+              <span class="value">
+                <span data-elem="precipitation"></span> %
+              </span>
+            </div>
+            <div class="today-info-row">
+              <span class="title">Влажность</span>
+              <span class="value">
+                <span data-elem="humidity"></span> %
+              </span>
+            </div>
+            <div class="today-info-row">
+              <span class="title">Ветер</span>
+              <span class="value">
+                <span data-elem="wind"></span> км/ч
+              </span>
+            </div>
+          </div>
+
+          <ul class="week-list" data-elem="week"></ul>
+
+          <button class="location-button" data-elem="button">
+            <i data-feather="map-pin"></i>
+            <span>Выбрать город</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="cities" data-elem="cities">
+        <div class="city" data-location="kazan">Kazan</div>
+        <div class="city" data-location="newYork">New York</div>
+        <div class="city" data-location="sydney">Sydney</div>
+      </div>
+    </div>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
